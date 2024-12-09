@@ -1,0 +1,117 @@
+.circle {
+	$parent: &;
+
+	position: relative;
+	height: 0;
+	padding-top: 100%;
+
+	&--expand {
+		#{$parent} {
+
+		}
+	}
+
+	&::before {
+		position: absolute;
+		top: 14%;
+		right: 13%;
+		z-index: 1;
+		content: "";
+		min-width: 15px;
+		max-width: 15px;
+		height: 15px;
+		background-color: $color-button;
+		border-radius: 50%;
+	}
+
+	&__item {
+		position: absolute;
+		background-color: $white;
+		border-radius: 50%;
+		border: 1px solid $color-icon-border;
+
+		&--colored {
+			background-color: rgba($color-icon-border, 0.2);
+		}
+
+		&--1 {
+			top: 11%;
+			right: 11%;
+			width: 24%;
+			height: 24%;
+
+			span {
+				top: 39%;
+				left: -4%;
+			}
+		}
+
+		&--2 {
+			top: 8%;
+			right: 8%;
+			width: 45%;
+			height: 45%;
+
+			span {
+				bottom: 6%;
+				left: 11%;
+			}
+		}
+
+		&--3 {
+			top: 5%;
+			right: 5%;
+			width: 67%;
+			height: 67%;
+
+			span {
+				top: 45%;
+				left: -1%;
+			}
+		}
+
+		&--4 {
+			top: 2%;
+			right: 2.5%;
+			width: 84%;
+			height: 84%;
+
+			span {
+				bottom: 2%;
+				left: 23%;
+			}
+		}
+
+		&--5 {
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+
+			span {
+				bottom: 27%;
+				left: 3%;
+			}
+		}
+
+		span {
+			position: absolute;
+			display: flex;
+			gap: 10px;
+			max-width: 160px;
+			font-size: 16px;
+			line-height: 1.125;
+
+			&::before {
+				content: "";
+				min-width: 10px;
+				max-width: 10px;
+				height: 10px;
+				background-color: $color-button;
+				border-radius: 50%;
+				filter: blur(2px);
+				margin-top: 4px;
+			}
+		}
+	}
+}

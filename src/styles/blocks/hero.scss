@@ -1,0 +1,29 @@
+.hero {
+	padding: 214px 0 58px;
+	background-color: $color-background;
+	border-radius: 0 0 40px 40px;
+
+	&__title {
+		font-weight: 400;
+		font-size: 80px;
+		line-height: 1.125;
+		text-align: center;
+	}
+
+	&__text {
+		max-width: 650px;
+		margin: 31px auto 0;
+		font-size: 24px;
+		line-height: 1.29;
+		text-align: center;
+	}
+
+	&__bg {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 1438px;
+		height: 282px;
+		margin-top: 77px;
+	}
+}

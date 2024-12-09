@@ -1,0 +1,14 @@
+.footer {
+	$parent: &;
+
+	position: relative;
+	z-index: 10;
+	padding: 68px 0;
+	border-radius: 40px 40px 0 0;
+	background-color: $black;
+	margin-top: 80px;
+
+	@include max(ti) {
+		margin-top: 60px;
+	}
+}

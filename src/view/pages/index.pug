@@ -1,0 +1,56 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Росатом'
+		};
+
+block main
+	section.hero
+		.container.hero__container
+			h1.hero__title Росатом: энергия ИИ
+			.hero__text.
+				Промышленность все активнее берет на вооружение ИИ-разработки — насколько эффективно показывает себя
+				искусственный интеллект в атомной отрасли?
+		+icon('hero')(class='hero__bg')
+	section.statistics
+		.container
+			+title-gradient('Системы предиктивной аналитики')
+			.statistics__quote
+				.statistics__quote-image
+					+picture('author1', 'png')
+				.statistics__quote-text.
+					Дмитрий Баглей, «Цифрум»: <br> «Искусственный интеллект,
+					принимающий решения без человека, – это фантазия»
+			.statistics__wrapper
+				.statistics__col
+					.statistics__text
+						p «Наша главная цель – 0% рутины за счет максимально эффективного применения технологий»
+						p.
+							Какие преимущества дает применение ИИ-решений в атомной отрасли? Насколько они повлияют на кадровый вопрос
+							на&nbsp;предприятиях и как преодолеть основные барьеры внедрения искусственного интеллекта
+							в российскую атомную промышленность?
+					+button('Читать интервью', 'statistics__button')
+					.counter.statistics__counter
+						.counter__item
+							p с <span>2,3%</span>&nbsp&nbsp&nbspдо&nbsp&nbsp&nbsp<span>0,9%</span>
+							p ниже уровень брака
+						.counter__item
+							p на <span>17%</span>
+							p меньше простоев
+						.counter__item
+							p в <span>8</span> раз
+							p меньше несчастных случаев
+				.statistics__col
+					.circle
+						.circle__item.circle__item--5
+							span математическое моделирование
+						.circle__item.circle__item--4.circle__item--colored
+							span имитационное моделирование
+						.circle__item.circle__item--3
+							span видеозрение
+						.circle__item.circle__item--2.circle__item--colored
+							span генеративный интеллект
+						.circle__item.circle__item--1
+							span машинное обучение
