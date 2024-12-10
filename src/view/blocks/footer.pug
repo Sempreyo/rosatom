@@ -1,2 +1,9 @@
 footer.footer
-	.container.footer__container
+	.container
+		.footer__top
+			a.footer__logo(href='#', target='_blank')
+				+picture('logo', 'png')(width='164', height='33')
+			a.footer__home(href='/') На главную
+			.footer__up
+				+icon('arrow-up')(width='37', height='58')
+		.footer__adv Реклама

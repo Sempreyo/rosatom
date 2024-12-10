@@ -1,33 +1,5 @@
 .title {
-	font-weight: 400;
-	font-size: 46px;
-	line-height: 1;
-
-	@include max(d) {
-		font-size: fluid(30, 46, 992, 1280);
-	}
-
-	@include max(tl) {
-		font-size: fluid(25, 30, 768, 992);
-	}
-
-	@include max(ti) {
-		font-size: fluid(20, 30, 0, 768);
-	}
-
-	&--big {
-		font-size: 50px;
-
-		@include max(d) {
-			font-size: fluid(30, 50, 992, 1280);
-		}
-
-		@include max(tl) {
-			font-size: fluid(25, 30, 768, 992);
-		}
-
-		@include max(ti) {
-			font-size: fluid(20, 30, 0, 768);
-		}
-	}
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.3;
 }

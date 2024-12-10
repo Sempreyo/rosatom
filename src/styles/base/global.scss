@@ -51,6 +51,18 @@ body {
 	-o-font-smoothing: antialiased;
 	-webkit-locale: auto;
 	white-space: normal;
+
+	@include max(d) {
+		font-size: fluid(18, 20, 992, 1280);
+	}
+
+	@include max(tl) {
+		font-size: fluid(16, 18, 768, 992);
+	}
+
+	@include max(ti) {
+		font-size: fluid(14, 16, 0, 768);
+	}
 }
 
 main {
@@ -108,4 +120,35 @@ ol {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+/* Swiper */
+.swiper-nav {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	.swiper-btn-prev,
+	.swiper-btn-next {
+		position: relative;
+		width: 31px;
+		height: 31px;
+		cursor: pointer;
+
+		&:hover svg {
+			color: rgba($color-button, 0.7);
+		}
+
+		&.swiper-button-disabled svg {
+			filter: brightness(0.1);
+			opacity: 0.5;
+		}
+
+		svg {
+			color: $color-button;
+			transition: 0.3s ease;
+		}
+	}
 }

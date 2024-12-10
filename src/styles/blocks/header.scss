@@ -20,4 +20,13 @@
 		justify-content: space-between;
 		gap: 20px;
 	}
+
+	&__logo,
+	&__logo-cn {
+		transition: 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
 }

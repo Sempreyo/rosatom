@@ -4,25 +4,82 @@
 	gap: 46px 40px;
 	max-width: 400px;
 
+	@include max(tl) {
+		max-width: 100%;
+	}
+
 	&__item {
+		overflow: hidden;
+
+		@include max(tl) {
+			text-align: center;
+		}
+
 		&:nth-child(3n + 1) {
 			grid-column: 1 / span 2;
 		}
 
+		& > p {
+			font-size: 18px;
+			border-top: 1px solid $black;
+			padding-top: 8px;
+
+			@include max(ti) {
+				font-size: fluid(16, 18, 0, 768);
+			}
+		}
+	}
+
+	&__item-top {
+		font-size: 25px;
+		line-height: 1.25;
+		overflow: hidden;
+
+		@include max(d) {
+			font-size: fluid(24, 25, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(22, 24, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(20, 22, 0, 768);
+		}
+
 		p {
-			&:first-child {
-				font-size: 25px;
-				line-height: 1.25;
+			transform: translateY(80px);
+			transition: 0.5s ease;
+
+			&.show {
+				transform: translateY(0);
+			}
+		}
+
+		span {
+			font-size: 65px;
+			line-height: 1;
+
+			@include max(tl) {
+				font-size: fluid(55, 65, 768, 992);
 			}
 
-			&:last-child {
-				font-size: 18px;
-				border-top: 1px solid $black;
-				padding-top: 8px;
+			@include max(ti) {
+				font-size: fluid(40, 55, 0, 768);
 			}
 
-			span {
-				font-size: 65px;
+			&.odometer.odometer-theme-default {
+				font-family: $mainFont;
+				line-height: 1;
+				vertical-align: bottom;
+
+				.odometer-digit {
+					vertical-align: bottom;
+				}
+
+				.odometer-digit .odometer-digit-spacer {
+					vertical-align: bottom;
+				}
 			}
 		}
 	}

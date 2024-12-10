@@ -1,10 +1,27 @@
 .statistics {
-	padding: 62px 0 20px;
+	padding: 62px 0 10px;
+
+	@include max(tl) {
+		padding: 62px 0 50px;
+	}
+
+	@include max(ti) {
+		padding: 30px 0;
+	}
 
 	&__quote {
 		display: flex;
 		gap: 35px;
 		margin-top: 55px;
+
+		@include max(ti) {
+			margin-top: 30px;
+		}
+
+		@include max(t) {
+			display: block;
+			gap: unset;
+		}
 	}
 
 	&__quote-image {
@@ -13,6 +30,14 @@
 		height: 140px;
 		border-radius: 20px;
 		overflow: hidden;
+
+		@include max(t) {
+			min-width: 100px;
+			max-width: 100px;
+			height: 100px;
+			float: left;
+			margin-right: 30px;
+		}
 
 		img {
 			width: 100%;
@@ -26,20 +51,51 @@
 		font-weight: 700;
 		font-size: 36px;
 		line-height: 1.3;
+
+		@include max(d) {
+			font-size: fluid(30, 36, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(26, 30, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(24, 26, 0, 768);
+		}
 	}
 
 	&__wrapper {
 		display: flex;
 		margin-top: 30px;
+
+		@include max(tl) {
+			flex-direction: column;
+			gap: 30px;
+		}
+
+		@include max(t) {
+			margin-top: 10px;
+		}
 	}
 
 	&__col {
 		&:first-child {
 			width: 53%;
+
+			@include max(tl) {
+				width: 100%;
+			}
 		}
 
 		&:last-child {
 			width: 47%;
+
+			@include max(tl) {
+				display: flex;
+				justify-content: center;
+				width: 100%;
+			}
 		}
 	}
 

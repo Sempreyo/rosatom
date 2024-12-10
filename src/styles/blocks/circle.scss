@@ -2,20 +2,14 @@
 	$parent: &;
 
 	position: relative;
-	height: 0;
-	padding-top: 100%;
-
-	&--expand {
-		#{$parent} {
-
-		}
-	}
+	max-width: 546px;
+	width: 100%;
 
 	&::before {
 		position: absolute;
 		top: 14%;
 		right: 13%;
-		z-index: 1;
+		z-index: 8;
 		content: "";
 		min-width: 15px;
 		max-width: 15px;
@@ -24,83 +18,126 @@
 		border-radius: 50%;
 	}
 
+	&__inner {
+		position: relative;
+		height: 0;
+		padding-top: 100%;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
 	&__item {
 		position: absolute;
 		background-color: $white;
 		border-radius: 50%;
 		border: 1px solid $color-icon-border;
+		transform: scale(1);
+		transform-origin: top right;
+		transition: 0.5s linear;
+
+		&.hidden {
+			transform: scale(0);
+		}
 
 		&--colored {
 			background-color: rgba($color-icon-border, 0.2);
 		}
 
 		&--1 {
+			z-index: 5;
 			top: 11%;
 			right: 11%;
 			width: 24%;
 			height: 24%;
 
-			span {
+			& > span {
 				top: 39%;
 				left: -4%;
+
+				@include max(t) {
+					top: calc(50% - 10px);
+					left: -5px;
+				}
 			}
 		}
 
 		&--2 {
+			z-index: 4;
 			top: 8%;
 			right: 8%;
 			width: 45%;
 			height: 45%;
 
-			span {
-				bottom: 6%;
+			& > span {
+				bottom: 5%;
 				left: 11%;
+
+				@include max(t) {
+					top: calc(50% - 10px);
+					left: -5px;
+				}
 			}
 		}
 
 		&--3 {
+			z-index: 3;
 			top: 5%;
 			right: 5%;
 			width: 67%;
 			height: 67%;
 
-			span {
+			& > span {
 				top: 45%;
-				left: -1%;
+				left: -1.5%;
+
+				@include max(t) {
+					top: calc(50% - 10px);
+					left: -5px;
+				}
 			}
 		}
 
 		&--4 {
+			z-index: 2;
 			top: 2%;
 			right: 2.5%;
 			width: 84%;
 			height: 84%;
 
-			span {
-				bottom: 2%;
+			& > span {
+				bottom: 1.3%;
 				left: 23%;
+
+				@include max(t) {
+					top: calc(50% - 10px);
+					left: -5px;
+				}
 			}
 		}
 
 		&--5 {
+			z-index: 1;
 			top: 0;
 			right: 0;
 			width: 100%;
 			height: 100%;
 
-			span {
+			& > span {
 				bottom: 27%;
-				left: 3%;
+				left: 3.4%;
+
+				@include max(t) {
+					top: calc(50% - 10px);
+					left: 0;
+				}
 			}
 		}
 
-		span {
+		& > span {
 			position: absolute;
 			display: flex;
 			gap: 10px;
 			max-width: 160px;
-			font-size: 16px;
-			line-height: 1.125;
 
 			&::before {
 				content: "";
@@ -111,6 +148,22 @@
 				border-radius: 50%;
 				filter: blur(2px);
 				margin-top: 4px;
+			}
+
+			span {
+				font-size: 16px;
+				line-height: 1.125;
+
+				@include max(ti) {
+					font-size: fluid(10, 16, 0, 768);
+				}
+
+				@include max(t) {
+					display: block;
+					width: 142px;
+					height: 60px;
+					transform: translate(-38px, 54px) rotate(45deg);
+				}
 			}
 		}
 	}

@@ -1,0 +1,70 @@
+.simple {
+	$parent: &;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 878px;
+	background-color: $color-background;
+	border-radius: 40px;
+	overflow: hidden;
+	padding: 40px 0;
+
+	&--horizontal {
+		flex-direction: column;
+		min-height: unset;
+		padding: 70px 0 0;
+
+		#{$parent} {
+			&__bg {
+				position: relative;
+				top: unset;
+				width: 1440px;
+				height: 352px;
+				margin-top: 88px;
+			}
+
+			&__content {
+				max-width: 1008px;
+				margin-left: 0;
+			}
+
+			&__text {
+				max-width: 861px;
+			}
+		}
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 1355px;
+		height: 878px;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+
+		&.show {
+			animation: dash 3s linear forwards;
+		}
+	}
+
+	&__content {
+		max-width: 542px;
+		margin-left: auto;
+	}
+
+	&__text {
+		max-width: 489px;
+		margin-top: 30px;
+	}
+
+	&__button {
+		margin-top: 36px;
+	}
+}

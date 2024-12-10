@@ -2,12 +2,31 @@
 	padding: 214px 0 58px;
 	background-color: $color-background;
 	border-radius: 0 0 40px 40px;
+	overflow: hidden;
 
 	&__title {
 		font-weight: 400;
 		font-size: 80px;
 		line-height: 1.125;
 		text-align: center;
+		overflow: hidden;
+
+		@include max(d) {
+			font-size: fluid(70, 80, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(45, 70, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(30, 45, 0, 768);
+		}
+
+		.char {
+			transform: translateY(calc(100% + 30px));
+			transition: 0.3s ease;
+		}
 	}
 
 	&__text {
@@ -16,6 +35,18 @@
 		font-size: 24px;
 		line-height: 1.29;
 		text-align: center;
+
+		@include max(d) {
+			font-size: fluid(22, 24, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(20, 22, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(18, 20, 0, 768);
+		}
 	}
 
 	&__bg {
@@ -25,5 +56,11 @@
 		width: 1438px;
 		height: 282px;
 		margin-top: 77px;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+
+		&.show {
+			animation: dash 3s linear forwards;
+		}
 	}
 }

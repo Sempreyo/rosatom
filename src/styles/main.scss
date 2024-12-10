@@ -1,3 +1,8 @@
+/* Libs */
+@import "./../../node_modules/swiper/swiper";
+@import "libs/aos.css";
+@import "libs/odometer-theme-default.css";
+
 /* Base */
 @import "base/var";
 @import "base/mixin";
@@ -12,7 +17,13 @@
 @import "blocks/title-gradient";
 @import "blocks/counter";
 @import "blocks/circle";
+@import "blocks/news-card";
 @import "blocks/header";
 @import "blocks/footer";
 @import "blocks/hero";
 @import "blocks/statistics";
+@import "blocks/banners";
+@import "blocks/carousel";
+@import "blocks/simple";
+@import "blocks/quote-section";
+@import "blocks/news";

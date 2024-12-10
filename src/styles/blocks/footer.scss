@@ -3,12 +3,49 @@
 
 	position: relative;
 	z-index: 10;
-	padding: 68px 0;
-	border-radius: 40px 40px 0 0;
-	background-color: $black;
-	margin-top: 80px;
+	padding: 10px 0 20px;
 
-	@include max(ti) {
-		margin-top: 60px;
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__logo {
+		transition: 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__home {
+		font-weight: 700;
+		font-size: 20px;
+		text-transform: uppercase;
+		transition: 0.3s ease;
+
+		&:hover {
+			color: rgba($black, 0.7);
+		}
+	}
+
+	&__up {
+		cursor: pointer;
+
+		&:hover svg {
+			color: rgba($color-button, 0.7);
+		}
+
+		svg {
+			color: $color-button;
+			transition: 0.3s ease;
+		}
+	}
+
+	&__adv {
+		font-size: 12px;
+		margin-top: 38px;
 	}
 }
