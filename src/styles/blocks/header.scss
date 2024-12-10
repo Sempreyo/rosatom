@@ -19,14 +19,61 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 20px;
+
+		@include max(t) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__logo,
 	&__logo-cn {
 		transition: 0.3s ease;
 
+		@include max(t) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: calc(50% - 10px);
+		}
+
 		&:hover {
 			opacity: 0.7;
+		}
+	}
+
+	&__logo {
+		width: 200px;
+		height: 41px;
+
+		@include max(t) {
+			width: 100px;
+			height: 20px;
+		}
+	}
+
+	&__logo-cn svg {
+		width: 113px;
+		height: 22px;
+
+		@include max(t) {
+			width: 102px;
+			height: 20px;
+		}
+	}
+
+	&__home {
+		font-size: 20px;
+		text-transform: uppercase;
+		transition: 0.3s ease;
+
+		@include max(t) {
+			order: 1;
+			width: 100%;
+			text-align: center;
+		}
+
+		&:hover {
+			color: rgba($black, 0.7);
 		}
 	}
 }

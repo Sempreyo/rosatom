@@ -3,10 +3,22 @@
 	border-radius: 40px;
 	padding: 50px 0;
 
+	@include max(ti) {
+		padding: 30px 0;
+	}
+
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 58px;
+
+		@include max(d) {
+			gap: 30px;
+		}
+
+		@include max(ti) {
+			flex-direction: column;
+		}
 	}
 
 	&__image {
@@ -14,16 +26,63 @@
 		border-radius: 40px;
 		overflow: hidden;
 
+		@include max(d) {
+			width: calc(39.5% - 15px);
+		}
+
+		@include max(tl) {
+			width: calc(50% - 15px);
+		}
+
+		@include max(ti) {
+			order: 1;
+			width: 100%;
+		}
+
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+
+			@include max(ti) {
+				aspect-ratio: 16 / 9;
+			}
 		}
 	}
 
 	&__content {
 		width: calc(60.5% - 29px);
 		padding-top: 26px;
+
+		@include max(d) {
+			width: calc(60.5% - 15px);
+		}
+
+		@include max(tl) {
+			width: calc(50% - 15px);
+		}
+
+		@include max(ti) {
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 100%;
+			padding-top: 0;
+		}
+
+		@include max(t) {
+			flex-direction: column;
+		}
+	}
+
+	&__content-inner {
+		@include max(ti) {
+			width: calc(50% - 15px);
+		}
+
+		@include max(t) {
+			width: 100%;
+		}
 	}
 
 	&__title,
@@ -34,6 +93,11 @@
 	&__text {
 		font-size: 18px;
 		margin-top: 34px;
+
+		@include max(ti) {
+			font-size: fluid(16, 18, 0, 768);
+			margin-top: 20px;
+		}
 	}
 
 	&__button {
@@ -47,11 +111,33 @@
 		overflow: hidden;
 		margin: -30px 20px 0 auto;
 
+		@include max(d) {
+			margin-top: 20px;
+		}
+
+		@include max(tl) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		@include max(ti) {
+			width: calc(50% - 15px);
+			margin-top: 0;
+		}
+
+		@include max(t) {
+			width: 100%;
+		}
+
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			aspect-ratio: 1 / 1;
+
+			@include max(t) {
+				aspect-ratio: 16 / 9;
+			}
 		}
 	}
 }

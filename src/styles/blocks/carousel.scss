@@ -1,6 +1,10 @@
 .carousel {
 	padding: 63px 0 81px;
 
+	@include max(ti) {
+		padding: 30px 0;
+	}
+
 	&__wrapper {
 		display: flex;
 		align-items: flex-start;
@@ -56,10 +60,18 @@
 	&__text {
 		max-width: 407px;
 		margin-top: 41px;
+
+		@include max(tl) {
+			margin-top: 20px;
+		}
 	}
 
 	&__button {
 		margin-top: 43px;
+
+		@include max(tl) {
+			margin-top: 30px;
+		}
 	}
 
 	&__slider {

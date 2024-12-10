@@ -67,32 +67,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	/* Анимация главного заголовка и картинки */
 	const hero = document.querySelector(".hero");
+	const heroTitle = document.querySelector(".hero__title--main");
 
-	if (hero) {
-		/* Разделить строку на символы */
+	/* Разделить строку на символы */
+	if (heroTitle) {
 		const splitText = new SplitType(".hero__title", {
 			types: "chars"
 		});
-		const chars = document.querySelectorAll(".hero__title .char");
-		const heroBg = document.querySelector(".hero__bg");
+	}
+
+	if (hero) {
+		const chars = hero.querySelectorAll(".hero__title .char");
+		const heroBg = hero.querySelector(".hero__bg");
 
 		/* Анимация появления символов */
 		const heroObserver = new IntersectionObserver((entries, observer) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					chars.forEach((el, index) => {
-						setTimeout(() => {
-							el.style.transform = 'translateY(0)';
-						}, 50 * index);
-					});
+					if (chars) {
+						chars.forEach((el, index) => {
+							setTimeout(() => {
+								el.style.transform = 'translateY(0)';
+							}, 50 * index);
+						});
+					}
 
 					heroBg.classList.add("show");
 				} else {
-					chars.forEach((el, index) => {
-						setTimeout(() => {
-							el.style.transform = 'translateY(calc(100% + 30px))';
-						}, 50 * index);
-					});
+					if (chars) {
+						chars.forEach((el, index) => {
+							setTimeout(() => {
+								el.style.transform = 'translateY(calc(100% + 30px))';
+							}, 50 * index);
+						});
+					}
 
 					heroBg.classList.remove("show");
 				}
@@ -243,6 +251,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const initButtonUp = () => {
 		if (buttonUp) {
+			window.addEventListener("scroll", buttonUpHandler);
+
 			buttonUp.addEventListener("click", () => {
 				document.querySelector("body").scrollIntoView({
 					behavior: 'smooth'
@@ -251,5 +261,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	initButtonUp();
+	const buttonUpHandler = () => {
+		scroll = window.pageYOffset;
+
+		if (scroll > 300) {
+			buttonUp.classList.add("footer__up--visible");
+		} else {
+			buttonUp.classList.remove("footer__up--visible");
+		}
+	}
+
+	if (window.matchMedia("(max-width: 575px)").matches) {
+		initButtonUp();
+	}
 });

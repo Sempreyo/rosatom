@@ -18,4 +18,22 @@
 	&:hover {
 		background-color: rgba($color-button, 0.7);
 	}
+
+	&--white {
+		background-color: $white;
+		border-radius: 8px;
+		padding: 8px 5px;
+
+		span {
+			background: radial-gradient(53.12% 137.82% at 32.08% 20.76%, #448ECA 0%, #28376D 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 12px;
+			line-height: 1;
+		}
+
+		&:hover {
+			background-color: rgba($white, 0.7);
+		}
+	}
 }

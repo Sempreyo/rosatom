@@ -1,0 +1,23 @@
+.article {
+	&__main {
+		display: flex;
+		gap: 40px;
+		margin-top: 62px;
+
+		@include max(ti) {
+			flex-direction: column;
+		}
+	}
+
+	&__banners {
+		position: sticky;
+		top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+	}
+
+	@include max(ti) {
+		margin-top: 30px;
+	}
+}

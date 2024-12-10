@@ -7,11 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
 			const newsCarouselPrev = elem.previousElementSibling.querySelector(".news__navigation .swiper-btn-prev");
 
 			const slider = new Swiper(elem, {
-				slidesPerView: 4,
-				spaceBetween: 26,
+				slidesPerView: 1,
+				spaceBetween: 10,
 				navigation: {
 					nextEl: newsCarouselNext,
 					prevEl: newsCarouselPrev,
+				},
+				breakpoints: {
+					576: {
+						slidesPerView: 2
+					},
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 20
+					},
+					992: {
+						slidesPerView: 4,
+						spaceBetween: 26
+					},
 				}
 			});
 		});

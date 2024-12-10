@@ -10,10 +10,38 @@
 	overflow: hidden;
 	padding: 40px 0;
 
+	&--vertical {
+		@include max(tl) {
+			min-height: unset;
+		}
+
+		&::after {
+			@include max(tl) {
+				position: absolute;
+				inset: 0;
+				content: "";
+				display: block;
+				background-color: rgba($white, 0.8);
+			}
+		}
+
+		#{$parent} {
+			&__content {
+				@include max(ti) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
 	&--horizontal {
 		flex-direction: column;
 		min-height: unset;
 		padding: 70px 0 0;
+
+		@include max(ti) {
+			padding: 30px 0 0;
+		}
 
 		#{$parent} {
 			&__bg {
@@ -22,6 +50,16 @@
 				width: 1440px;
 				height: 352px;
 				margin-top: 88px;
+
+				@include max(tl) {
+					height: 250px;
+					margin-top: 40px;
+				}
+
+				@include max(ti) {
+					height: 180px;
+					margin-top: 30px;
+				}
 			}
 
 			&__content {
@@ -37,6 +75,7 @@
 
 	&__container {
 		position: relative;
+		z-index: 1;
 	}
 
 	&__bg {

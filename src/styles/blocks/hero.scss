@@ -1,8 +1,91 @@
 .hero {
+	$parent: &;
+
 	padding: 214px 0 58px;
 	background-color: $color-background;
 	border-radius: 0 0 40px 40px;
 	overflow: hidden;
+
+	@include max(ti) {
+		padding: 120px 0 30px;
+	}
+
+	&--article {
+		padding: 194px 0 32px;
+
+		@include max(ti) {
+			padding: 120px 0 30px;
+		}
+
+		@include max(t) {
+			padding: 140px 0 30px;
+		}
+
+		#{$parent} {
+			&__container {
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
+				gap: 86px;
+
+				@include max(d) {
+					gap: 20px;
+				}
+
+				@include max(tl) {
+					flex-direction: column;
+				}
+			}
+
+			&__bg {
+				margin-top: 88px;
+
+				@include max(ti) {
+					margin-top: 30px;
+				}
+			}
+
+			&__title {
+				font-weight: 400;
+				font-size: 45px;
+				line-height: 1.11;
+				text-align: left;
+
+				@include max(d) {
+					font-size: fluid(40, 45, 992, 1280);
+				}
+
+				@include max(tl) {
+					font-size: fluid(35, 40, 768, 992);
+				}
+
+				@include max(ti) {
+					font-size: fluid(28, 35, 0, 768);
+				}
+			}
+
+			&__text {
+				max-width: 580px;
+				margin: 38px 0 0;
+				text-align: left;
+			}
+
+			&__type {
+				padding: 9px 38px;
+				margin-top: 10px;
+				background-color: $color-button;
+				border-radius: 10px;
+				color: $white;
+				font-weight: 700;
+				font-size: 14px;
+
+				@include max(tl) {
+					order: -1;
+					margin-top: 0;
+				}
+			}
+		}
+	}
 
 	&__title {
 		font-weight: 400;
@@ -58,6 +141,10 @@
 		margin-top: 77px;
 		stroke-dasharray: 1000;
 		stroke-dashoffset: 1000;
+
+		@include max(ti) {
+			margin-top: 40px;
+		}
 
 		&.show {
 			animation: dash 3s linear forwards;

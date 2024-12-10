@@ -9,7 +9,7 @@ block vars
 block main
 	section.hero
 		.container.hero__container
-			h1.hero__title Росатом: энергия ИИ
+			h1.hero__title.hero__title--main Росатом: энергия ИИ
 			.hero__text.
 				Промышленность все активнее берет на вооружение ИИ-разработки — насколько эффективно показывает себя
 				искусственный интеллект в атомной отрасли?
@@ -68,12 +68,13 @@ block main
 			.banners__image(data-aos="zoom-in")
 				+picture('banners/1', 'png')
 			.banners__content
-				+title('Комплексная цифровизация: <br> как искусственный интеллект борется с браком на заводах', 'banners__title')(data-aos="zoom-in", data-aos-delay="100")
-				.banners__text(data-aos="zoom-in", data-aos-delay="200").
-					Первой в России пилотной площадкой для внедрения системы прогнозирования качества продукции и состояния
-					оборудования, разработанной в Топливном дивизионе «Росатома», стал производитель циркониевых оболочек
-					для ядерного <br> топлива - Чепецкий механический завод в Удмуртии.
-				+button('Читать статью', 'banners__button', '#')(data-aos="zoom-in", data-aos-delay="300")
+				.banners__content-inner
+					+title('Комплексная цифровизация: <br> как искусственный интеллект борется с браком на заводах', 'banners__title')(data-aos="zoom-in", data-aos-delay="100")
+					.banners__text(data-aos="zoom-in", data-aos-delay="200").
+						Первой в России пилотной площадкой для внедрения системы прогнозирования качества продукции и состояния
+						оборудования, разработанной в Топливном дивизионе «Росатома», стал производитель циркониевых оболочек
+						для ядерного <br> топлива - Чепецкий механический завод в Удмуртии.
+					+button('Читать статью', 'banners__button', '#')(data-aos="zoom-in", data-aos-delay="300")
 				.banners__image-inner(data-aos="zoom-in")
 					+picture('banners/2', 'jpg')
 	section.carousel

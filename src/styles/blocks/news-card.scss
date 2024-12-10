@@ -9,11 +9,27 @@
 		#{$parent} {
 			&__image {
 				transform: rotate(-6deg);
+
+				@include max(t) {
+					transform: rotate(0);
+				}
 			}
 
 			&__content {
 				background-color: $color-button;
 				transform: translate(8px, 110px) rotate(6deg);
+
+				@include max(tl) {
+					transform: translate(8px, 50px) rotate(4deg);
+				}
+
+				@include max(ti) {
+					transform: translate(0, 40px) rotate(0);
+				}
+
+				@include max(t) {
+					transform: translate(0, 40px) rotate(0);
+				}
 			}
 
 			&__text,
