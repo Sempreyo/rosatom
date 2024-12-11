@@ -38,39 +38,6 @@
 		}
 	}
 
-	&__up {
-		width: 37px;
-		height: 58px;
-		transition: opacity 0.3s ease;
-		cursor: pointer;
-
-		@include max(t) {
-			width: 18px;
-			height: 28px;
-			position: fixed;
-			bottom: 20px;
-			right: 15px;
-			opacity: 0;
-			pointer-events: none;
-		}
-
-		&--visible {
-			opacity: 1;
-			pointer-events: auto;
-		}
-
-		&:hover svg {
-			color: rgba($color-button, 0.7);
-		}
-
-		svg {
-			width: 100%;
-			height: 100%;
-			color: $color-button;
-			transition: 0.3s ease;
-		}
-	}
-
 	&__adv {
 		font-size: 12px;
 		margin-top: 38px;

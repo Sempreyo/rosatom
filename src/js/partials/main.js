@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	/* Скролл к началу */
-	const buttonUp = document.querySelector(".footer__up");
+	const buttonUp = document.querySelector(".button-up");
 
 	const initButtonUp = () => {
 		if (buttonUp) {
@@ -263,9 +263,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		scroll = window.pageYOffset;
 
 		if (scroll > 300) {
-			buttonUp.classList.add("footer__up--visible");
+			buttonUp.classList.add("button-up--visible");
 		} else {
-			buttonUp.classList.remove("footer__up--visible");
+			buttonUp.classList.remove("button-up--visible");
 		}
 	}
 
