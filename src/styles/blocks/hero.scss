@@ -65,7 +65,7 @@
 			}
 
 			&__text {
-				max-width: 580px;
+				max-width: 100%;
 				margin: 38px 0 0;
 				text-align: left;
 			}
@@ -103,7 +103,7 @@
 		}
 
 		@include max(ti) {
-			font-size: fluid(30, 45, 0, 768);
+			font-size: fluid(16, 45, 0, 768);
 		}
 
 		.char {
@@ -128,7 +128,7 @@
 		}
 
 		@include max(ti) {
-			font-size: fluid(18, 20, 0, 768);
+			font-size: fluid(14, 20, 0, 768);
 		}
 	}
 

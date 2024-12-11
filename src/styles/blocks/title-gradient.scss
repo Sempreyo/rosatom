@@ -21,4 +21,12 @@
 	@include max(ti) {
 		font-size: fluid(26, 30, 0, 768);
 	}
+
+	&--offset {
+		margin: 75px 0;
+
+		@include max(ti) {
+			margin: 30px 0;
+		}
+	}
 }

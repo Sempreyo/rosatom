@@ -10,7 +10,7 @@
 		display: flex;
 		align-items: flex-start;
 		gap: 42px;
-		margin: 60px 0 62px;
+		margin: 60px 0 0;
 		border-radius: 40px;
 		overflow: hidden;
 		padding: 57px 90px;
@@ -26,7 +26,7 @@
 		}
 
 		@include max(ti) {
-			margin: 30px 0;
+			margin: 30px 0 0;
 			padding: 30px 20px;
 		}
 	}

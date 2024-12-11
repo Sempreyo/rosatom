@@ -51,13 +51,23 @@
 		}
 	}
 
-	&__logo-cn svg {
+	&__logo-cn {
 		width: 113px;
 		height: 22px;
 
 		@include max(t) {
 			width: 102px;
 			height: 20px;
+		}
+
+		svg {
+			width: 113px;
+			height: 22px;
+
+			@include max(t) {
+				width: 102px;
+				height: 20px;
+			}
 		}
 	}
 

@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-	AOS.init();
-
 	/* Карусель с автопроигрыванием */
 	const slides = document.querySelectorAll(".carousel__slide");
 	const slidesContent = document.querySelectorAll(".carousel__content-item");
@@ -271,7 +269,5 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	if (window.matchMedia("(max-width: 575px)").matches) {
-		initButtonUp();
-	}
+	initButtonUp();
 });

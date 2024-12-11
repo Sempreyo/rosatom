@@ -63,6 +63,12 @@
 		}
 	}
 
+	&__image-filler {
+		position: absolute;
+		inset: 1px;
+		background-color: $color-icon-border;
+	}
+
 	&__content {
 		position: relative;
 		display: flex;
