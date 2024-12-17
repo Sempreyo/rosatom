@@ -1,49 +1,95 @@
 document.addEventListener("DOMContentLoaded", () => {
 	/* Карусель с автопроигрыванием */
-	const slides = document.querySelectorAll(".carousel__slide");
-	const slidesContent = document.querySelectorAll(".carousel__content-item");
-	const clearStateClasses = (el) => {
-		el.classList.remove("active", "next", "last");
-	};
+	const sliders = document.querySelectorAll(".carousel__wrapper");
 
-	slides.forEach((slide, index) => {
-		slide.addEventListener("click", (e) => {
-			slidesContent.forEach(el => el.classList.remove("active"));
-			e.currentTarget.style.transform = "translate3d(80px, -80px, 0)";
-			e.currentTarget.style.zIndex = "1";
-			e.currentTarget.classList.remove("active");
+	sliders.forEach(slider => {
+		const slidesContent = slider.querySelectorAll(".js-slide-fade");
+		const clearStateClasses = (el) => {
+			el.classList.remove("active", "next", "last");
+		};
+
+		const autoplaySlides = () => {
+			const activeSlide = slider.querySelector(".carousel__slide.active");
+			const nextSlide = slider.querySelector(".carousel__slide.next");
+			const lastSlide = slider.querySelector(".carousel__slide.last");
+
+			if (slidesContent && slidesContent.length > 0) {
+				slidesContent.forEach(el => el.classList.remove("active"));
+			}
 
 			/* Поменять рубашки у карточек */
-			e.currentTarget.classList.add("last");
-
-			if (slides[index + 1]) {
-				clearStateClasses(slides[index + 1]);
-				slides[index + 1].classList.add("active");
-				slides[index + 1].style.transform = "translate3d(0, 0, 0)";
-				slides[index + 1].style.zIndex = "3";
-				slidesContent[index + 1].classList.add("active");
-			} else {
-				clearStateClasses(slides[0]);
-				slides[0].classList.add("active");
-				slides[0].style.transform = "translate3d(0, 0, 0)";
-				slides[0].style.zIndex = "3";
-				slidesContent[0].classList.add("active");
+			if (activeSlide) {
+				clearStateClasses(activeSlide);
+				activeSlide.classList.add("last");
 			}
 
-			const activeSlide = document.querySelector(".carousel__slide.active");
+			if (nextSlide) {
+				clearStateClasses(nextSlide);
+				nextSlide.classList.add("active");
 
-			if (activeSlide.nextElementSibling) {
-				clearStateClasses(activeSlide.nextElementSibling);
-				activeSlide.nextElementSibling.classList.add("next");
-				activeSlide.nextElementSibling.style.transform = "translate3d(40px, -40px, 0)";
-				activeSlide.nextElementSibling.style.zIndex = "2";
-			} else {
-				clearStateClasses(slides[0]);
-				slides[0].classList.add("next");
-				slides[0].style.transform = "translate3d(40px, -40px, 0)";
-				slides[0].style.zIndex = "2";
+				if (slidesContent && slidesContent.length > 0) {
+					slidesContent[index + 1].classList.add("active");
+				}
 			}
-		});
+
+			if (lastSlide) {
+				clearStateClasses(lastSlide);
+				lastSlide.classList.add("next");
+			}
+		};
+
+		setInterval(() => {
+			autoplaySlides();
+		}, 4000);
+
+		/*slides.forEach((slide, index) => {
+			slide.addEventListener("click", (e) => {
+				if (slidesContent && slidesContent.length > 0) {
+					slidesContent.forEach(el => el.classList.remove("active"));
+				}
+
+				e.currentTarget.style.transform = "translate3d(80px, -80px, 0)";
+				e.currentTarget.style.zIndex = "1";
+				e.currentTarget.classList.remove("active");
+
+				/!* Поменять рубашки у карточек *!/
+				e.currentTarget.classList.add("last");
+
+				if (slides[index + 1]) {
+					clearStateClasses(slides[index + 1]);
+					slides[index + 1].classList.add("active");
+					slides[index + 1].style.transform = "translate3d(0, 0, 0)";
+					slides[index + 1].style.zIndex = "3";
+
+					if (slidesContent && slidesContent.length > 0) {
+						slidesContent[index + 1].classList.add("active");
+					}
+				} else {
+					clearStateClasses(slides[0]);
+					slides[0].classList.add("active");
+					slides[0].style.transform = "translate3d(0, 0, 0)";
+					slides[0].style.zIndex = "3";
+
+					if (slidesContent && slidesContent.length > 0) {
+						slidesContent[0].classList.add("active");
+					}
+				}
+
+				const activeSlide = document.querySelector(".carousel__slide.active");
+
+				if (activeSlide.nextElementSibling) {
+					clearStateClasses(activeSlide.nextElementSibling);
+					activeSlide.nextElementSibling.classList.add("next");
+					activeSlide.nextElementSibling.style.transform = "translate3d(40px, -40px, 0)";
+					activeSlide.nextElementSibling.style.zIndex = "2";
+				} else {
+					clearStateClasses(slides[0]);
+					slides[0].classList.add("next");
+					slides[0].style.transform = "translate3d(40px, -40px, 0)";
+					slides[0].style.zIndex = "2";
+				}
+			});
+		});*/
 	});
 
 	/* Якори */

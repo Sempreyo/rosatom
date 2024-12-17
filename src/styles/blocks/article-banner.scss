@@ -5,28 +5,38 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: 20px;
-	min-height: 573px;
+	gap: 40px;
+	min-width: 172px;
+	min-height: 440px;
 	border-radius: 20px;
 	overflow: hidden;
 	padding: 32px 10px;
 
 	@include max(ti) {
-		gap: 40px;
+		gap: 25px;
 		min-height: unset;
 	}
 
+	&:last-child {
+		position: sticky;
+		top: 20px;
+	}
+
 	&--interview {
+		#{$parent} {
+			&__text {
+				margin-top: 14px;
+			}
+		}
+	}
+
+	&:first-child {
 		#{$parent} {
 			&__bg {
 				&::after {
 					background: radial-gradient(53.12% 137.82% at 32.08% 20.76%, #448ECA 0%, #28376D 100%);
 					opacity: 0.6;
 				}
-			}
-
-			&__text {
-				margin-top: 14px;
 			}
 		}
 	}
@@ -56,7 +66,7 @@
 	&__title {
 		color: $white;
 		font-weight: 700;
-		font-size: 17px;
+		font-size: 15px;
 		line-height: 1.52;
 		text-transform: uppercase;
 	}

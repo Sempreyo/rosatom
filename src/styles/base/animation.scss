@@ -21,3 +21,71 @@
 		stroke-dashoffset: 0;
 	}
 }
+
+@keyframes card-slide-last {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(80px, -200px, 0);
+	}
+
+	100% {
+		transform: translate3d(80px, -80px, 0);
+	}
+}
+
+@keyframes card-slide-last-mobile {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(40px, -60px, 0);
+	}
+
+	100% {
+		transform: translate3d(40px, -40px, 0);
+	}
+}
+
+@keyframes card-slide-next {
+	0% {
+		transform: translate3d(80px, -80px, 0);
+	}
+
+	100% {
+		transform: translate3d(40px, -40px, 0);
+	}
+}
+
+@keyframes card-slide-next-mobile {
+	0% {
+		transform: translate3d(40px, -40px, 0);
+	}
+
+	100% {
+		transform: translate3d(20px, -20px, 0);
+	}
+}
+
+@keyframes card-slide-active {
+	0% {
+		transform: translate3d(40px, -40px, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes card-slide-active-mobile {
+	0% {
+		transform: translate3d(20px, -20px, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}

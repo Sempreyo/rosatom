@@ -1,14 +1,7 @@
 .carousel {
-	padding: 63px 0 81px;
-
-	@include max(ti) {
-		padding: 30px 0;
-	}
-
 	&__wrapper {
 		display: flex;
 		align-items: flex-start;
-		margin-top: 65px;
 		margin-right: -25px;
 
 		@include max(dl) {
@@ -62,6 +55,7 @@
 		margin-top: 41px;
 
 		@include max(tl) {
+			max-width: 100%;
 			margin-top: 20px;
 		}
 	}
@@ -82,7 +76,7 @@
 		aspect-ratio: 15 / 8;
 
 		@include max(tl) {
-			left: -40px;
+			left: -20px;
 			margin: 50px auto 0;
 		}
 
@@ -97,39 +91,64 @@
 		border-radius: 40px;
 		overflow: hidden;
 		cursor: pointer;
-		transition: 0.3s ease;
+		transition: 0.7s ease;
+
+		&.active {
+			animation: card-slide-active 0.4s ease forwards;
+			z-index: 3;
+
+			@include max(tl) {
+				animation: card-slide-active-mobile 0.4s ease forwards;
+			}
+		}
 
 		&.next {
+			animation: card-slide-next 0.4s ease forwards;
+			z-index: 2;
+
+			@include max(tl) {
+				animation: card-slide-next-mobile 0.4s ease forwards;
+			}
+
 			&::after {
 				position: absolute;
 				inset: 0;
 				content: "";
 				background-color: $color-icon-border;
+				transition: 0.5s ease;
 			}
 		}
 
 		&.last {
+			animation: card-slide-last 0.7s ease forwards;
+			z-index: 1;
+
+			@include max(tl) {
+				animation: card-slide-last-mobile 0.7s ease forwards;
+			}
+
 			&::after {
 				position: absolute;
 				inset: 0;
 				content: "";
 				background-color: $color-button;
+				transition: 0.5s ease;
 			}
 		}
 
 		&:nth-child(1) {
-			z-index: 3;
-			transform: translate3d(0, 0, -10px);
+			//z-index: 3;
+			//transform: translate3d(0, 0, -10px);
 		}
 
 		&:nth-child(2) {
-			z-index: 2;
-			transform: translate3d(40px, -40px, -10px);
+			//z-index: 2;
+			//transform: translate3d(40px, -40px, -10px);
 		}
 
 		&:nth-child(3) {
-			z-index: 1;
-			transform: translate3d(80px, -80px, -10px);
+			//z-index: 1;
+			//transform: translate3d(80px, -80px, -10px);
 		}
 
 		img {
